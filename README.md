@@ -1,6 +1,14 @@
 # "Face Your Fears" by Good Intentions
-University of Florida Virtual Reality Project
-for CIS4930: Introduction to Virtual Reality over Summer 2024
+University of Florida Virtual Reality Project \
+CIS4930: Introduction to Virtual Reality \
+Worked on Over Summer 2024
+
+## Contributors: 
+Anthony Pallitta \
+Bayron Najera \
+Justin Sanabria \
+Michael Jagiello \
+Shahbozbek Hakimov
 
 ## Introduction
 This is a project focused on exploring experiencing different phobias.
