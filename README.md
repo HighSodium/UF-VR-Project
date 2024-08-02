@@ -1,6 +1,6 @@
-# University of Florida Virtual Reality Project
 # "Face Your Fears" by Good Intentions
-# for CIS4930: Introduction to Virtual Reality over Summer 2024
+University of Florida Virtual Reality Project
+for CIS4930: Introduction to Virtual Reality over Summer 2024
 
 ## Introduction
 This is a project focused on exploring experiencing different phobias.
