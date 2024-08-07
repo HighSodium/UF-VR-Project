@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameStartMenu : MonoBehaviour
+public class InGameMenuLoad : MonoBehaviour
 {
     [Header("UI Pages")]
     public GameObject mainMenu;
@@ -14,20 +14,21 @@ public class GameStartMenu : MonoBehaviour
     public Button startButton;
     public Button optionButton;
     public Button aboutButton;
-    public Button quitButton;
+    public Button exitButton;
 
     public List<Button> returnButtons;
 
     // Start is called before the first frame update
     void Start()
     {
-        EnableMainMenu();
+        //EnableMainMenu();
 
         //Hook events
         //startButton.onClick.AddListener(StartGame); // not needed for now since we have multiple scenes to choose from
         optionButton.onClick.AddListener(EnableOption);
         aboutButton.onClick.AddListener(EnableAbout);
-        quitButton.onClick.AddListener(QuitGame);
+        aboutButton.onClick.AddListener(EnableAbout);
+        aboutButton.onClick.AddListener(EnableExit);
 
         foreach (var item in returnButtons)
         {
@@ -38,9 +39,9 @@ public class GameStartMenu : MonoBehaviour
     public void QuitGame()
     {
         // Quit the game in the editor
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-        #endif
+#endif
 
         Application.Quit();
     }
@@ -75,5 +76,9 @@ public class GameStartMenu : MonoBehaviour
         mainMenu.SetActive(false);
         options.SetActive(false);
         about.SetActive(true);
+    }
+    public void EnableExit()
+    {
+        HideAll();
     }
 }
