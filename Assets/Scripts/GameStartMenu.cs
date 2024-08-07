@@ -24,7 +24,7 @@ public class GameStartMenu : MonoBehaviour
         EnableMainMenu();
 
         //Hook events
-        startButton.onClick.AddListener(StartGame);
+        //startButton.onClick.AddListener(StartGame); // not needed for now since we have multiple scenes to choose from
         optionButton.onClick.AddListener(EnableOption);
         aboutButton.onClick.AddListener(EnableAbout);
         quitButton.onClick.AddListener(QuitGame);
