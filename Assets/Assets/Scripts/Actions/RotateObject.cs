@@ -11,6 +11,9 @@ public class RotateObject : MonoBehaviour
     [Tooltip("The max speed of the rotation")]
     public float speed = 10.0f;
 
+    [Tooltip("Whether to rotate in the opposite direction")]
+    public bool rotateBackward = false;
+
     private bool isRotating = false;
 
     public void SetIsRotating(bool value)
@@ -40,6 +43,15 @@ public class RotateObject : MonoBehaviour
         isRotating = !isRotating;
     }
 
+    public void StartRotating(bool reverse)
+    {
+        isRotating = true;
+        rotateBackward = reverse;
+    }
+    public void StopRotating()
+    {
+        isRotating = false;
+    }
 
     public void SetSpeed(float value)
     {
@@ -47,14 +59,23 @@ public class RotateObject : MonoBehaviour
         isRotating = (sensitivity * speed) != 0.0f;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isRotating)
-            Rotate();
+            if (rotateBackward)
+                RotateBackward();
+            else
+                RotateForward();
+
     }
 
-    private void Rotate()
+    public void RotateForward()
     {
         transform.Rotate(transform.up, (sensitivity * speed) * Time.deltaTime);
+    }
+
+    private void RotateBackward()
+    {
+        transform.Rotate(transform.up, (sensitivity * -speed) * Time.deltaTime);
     }
 }
