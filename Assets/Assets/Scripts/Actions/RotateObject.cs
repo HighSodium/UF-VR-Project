@@ -46,6 +46,7 @@ public class RotateObject : MonoBehaviour
     public void StartRotating(bool reverse)
     {
         isRotating = true;
+        rotateBackward = reverse;
     }
     public void StopRotating()
     {
@@ -68,7 +69,7 @@ public class RotateObject : MonoBehaviour
 
     }
 
-    private void RotateForward()
+    public void RotateForward()
     {
         transform.Rotate(transform.up, (sensitivity * speed) * Time.deltaTime);
     }

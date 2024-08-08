@@ -10,17 +10,10 @@ public class SceneTransitionManager : MonoBehaviour
 
     private void Awake()
     {
-        if (singleton != null && singleton != this)
-        {
-            Destroy(this.gameObject);
-            Debug.Log("Duplicate SceneTransitionManager destroyed");
-        }
-        else
-        {
-            singleton = this;
-            DontDestroyOnLoad(this.gameObject);
-            Debug.Log("SceneTransitionManager instance set and DontDestroyOnLoad called");
-        }
+        if (singleton && singleton != this)
+            Destroy(singleton);
+
+        singleton = this;
     }
 
     public void GoToScene(int sceneIndex)

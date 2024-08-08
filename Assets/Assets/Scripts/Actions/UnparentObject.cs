@@ -5,7 +5,7 @@ using UnityEngine;
 public class UnparentObject : MonoBehaviour
 {
 
-    public void Unparent(bool worldPositionStays = true)
+    public void Unparent()
     {
         transform.SetParent(null, true);
     }
